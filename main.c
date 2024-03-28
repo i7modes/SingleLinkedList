@@ -46,7 +46,7 @@ int main(){
     struct node* List = MakeEmpty(myList);
     PrintList(List);
 
-    printf("\n Done!\n");
+    printf("\nDone!\n");
     return 0;
 }
 
