@@ -132,9 +132,11 @@ void InsertLast(int X, struct node* L) {
 
     temp->Data = X;
     temp->Next = NULL;
+
     while(P->Next != NULL){
-        P = L->Next;
+        P = P->Next;
     }
+
     P->Next = temp;
 }
 
