@@ -13,6 +13,7 @@ struct node* Find(int, struct node*);
 struct node* FindPrevious(int, struct node*);
 void Delete(int, struct node*);
 void Insert(int, struct node*, struct node*);
+void InsetLast(int, struct node*);
 void PrintList(struct node*);
 void DeleteList(struct node*);
 int size( struct node*);
@@ -25,7 +26,8 @@ int main(){
     Insert(10, myList, myList);
     Insert(20, myList, myList->Next);
     Insert(30, myList, myList->Next->Next);
-    Insert(40, myList, myList->Next->Next->Next);
+    //Insert(40, myList, myList->Next->Next->Next);
+    InsertLast(40, myList);
     PrintList(myList);
 
     printf("%d\n", size(myList));
@@ -115,6 +117,24 @@ void Insert(int X, struct node* L, struct node* P) {
 
     temp->Data = X;
     temp->Next = P->Next;
+    P->Next = temp;
+}
+
+void InsertLast(int X, struct node* L) {
+    struct node* temp;
+    struct node* P = L;
+    temp = (struct node*)malloc(sizeof(struct node));
+
+    if (temp == NULL) {
+        printf("Out of memory!\n");
+        exit(1);
+    }
+
+    temp->Data = X;
+    temp->Next = NULL;
+    while(P->Next != NULL){
+        P = L->Next;
+    }
     P->Next = temp;
 }
 
