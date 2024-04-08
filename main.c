@@ -26,7 +26,6 @@ int main(){
     Insert(10, myList, myList);
     Insert(20, myList, myList->Next);
     Insert(30, myList, myList->Next->Next);
-    //Insert(40, myList, myList->Next->Next->Next);
     InsertLast(40, myList);
     PrintList(myList);
 
