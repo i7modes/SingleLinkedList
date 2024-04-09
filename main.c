@@ -5,6 +5,7 @@ struct node {
 
        int Data;
        struct node* Next;
+
 };
 struct node* MakeEmpty(struct node*);
 int IsEmpty(struct node*);
@@ -19,6 +20,7 @@ void DeleteList(struct node*);
 int size( struct node*);
 
 int main(){
+    
     struct node* myList = MakeEmpty(NULL);
 
     printf("%d\n", IsEmpty(myList));
