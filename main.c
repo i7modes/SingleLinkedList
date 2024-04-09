@@ -7,6 +7,7 @@ struct node {
        struct node* Next;
 
 };
+
 struct node* MakeEmpty(struct node*);
 int IsEmpty(struct node*);
 int IsLast(struct node*, struct node*);
@@ -150,7 +151,7 @@ void PrintList(struct node* L){
     } else {
 
        do{
-           P=P->Next;
+           P = P->Next;
            printf("%d\t", P->Data);
 
        }while( !IsLast(P, L) );
