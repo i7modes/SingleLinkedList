@@ -8,10 +8,10 @@ TEST_DIR = tests
 EXAMPLE_DIR = examples
 
 ifeq ($(OS),Windows_NT)
-    MKDIR = if not exist $(BIN_DIR) mkdir $(BIN_DIR)
-    RM = -del /Q /F $(BIN_DIR)\* 2>NUL
     DEMO_TARGET = $(BIN_DIR)/demo.exe
     TEST_TARGET = $(BIN_DIR)/test_runner.exe
+    MKDIR = cmd /C "if not exist $(BIN_DIR) mkdir $(BIN_DIR)"
+    RM = cmd /C "if exist $(BIN_DIR) del /Q /F $(BIN_DIR)\* 2>NUL"
 else
     MKDIR = mkdir -p $(BIN_DIR)
     RM = rm -rf $(BIN_DIR)
@@ -39,4 +39,4 @@ run-demo: demo
 	@$(DEMO_TARGET)
 
 clean:
-	$(RM)
+	@$(RM)

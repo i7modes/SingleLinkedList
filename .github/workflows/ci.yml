@@ -28,9 +28,16 @@ jobs:
             os: windows-latest
             cc: gcc
 
+    defaults:
+      run:
+        shell: bash
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Ensure bin directory exists
+        run: mkdir -p bin
 
       - name: Install dependencies (Ubuntu)
         if: runner.os == 'Linux' && matrix.valgrind

@@ -1,5 +1,6 @@
 # Binaries and object files
-bin/
+bin/*
+!bin/.gitkeep
 build/
 *.o
 *.obj
